@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../assets/css/stylek.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <title>Document</title>
+</head>
+
+<body class="container">
+    {{template "header" .}}
+    <main class="main">
+    {{template "navbar" .}}
+    <div class="content">
+        {{range $_, $e:= .Rows }}
+        <div class="everyone">
+            <h1>{{$e.Title }}</h1>
+            <img src="../assets//temp-images/{{$e.Image}}" alt="post img" width="70" height="90">
+            
+            <p>Tags:
+                
+                <span class="label label-info">{{ $e.Ganre}}</span>
+
+                
+                | <i class="icon-user"></i> <a href="#">{{ $e.Author }}</a>
+                <a class="read" href="/book/{{ .ID }}">READ MORE</a>
+            </p>
+
+        </div>
+        {{end}}
+    </div>
+    </main>
+    </div>
+    </div>
+
+
+</body>
+<script src="../assets/js/navbar.js"></script>
+</html>

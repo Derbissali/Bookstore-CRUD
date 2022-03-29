@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/stylek.css" />
+    <title>Document</title>
+</head>
+
+<body class="container">
+    {{define "header"}}
+    <header class="head">
+        <div class="logo">
+            <h1><a href="/">BookStore</a></h1>
+        </div>
+        
+    </header>
+    {{end}}
+
+    <main class="main">
+        {{define "navbar"}}
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="/addBook"><i class="fa fa-plus"></i>Add Post</a></li>
+              
+            </ul>
+        </nav>
+        {{end}}
+    </main>
+
+</body>
+
+</html>

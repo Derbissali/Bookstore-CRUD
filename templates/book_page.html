@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../assets/js/like.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Document</title>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../assets/js/like.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <nav class="navbar navbar-findcond navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">BookStore</a>
+                </div>
+                
+        </nav>
+    </div>
+    <div class="container">
+        <div id="blog" class="row">
+
+            
+            <div class="col-md-10">
+                {{range $_, $e:= .Rows }}
+                <div class="col-md-10 blogShort">
+
+                   
+                        <article>
+                            <img src="../assets/temp-images/{{$e.Image}}" alt="post img">
+                    
+                        </article>
+                        
+                        <form action="/update" enctype="multipart/form-data"  method="POST">
+                            <div class="form-group">
+                                <h4>Title:</h4>
+                                <textarea class="myArea" maxlength="50" name="titleB" wrap="off">{{$e.Title }}</textarea>
+                                <h4>Author:</h4>
+                                <textarea class="myArea" maxlength="50" name="authorB" wrap="off">{{$e.Author }}</textarea>
+                                <h4>Genre:</h4>
+                                <textarea class="myArea" maxlength="50" name="genreB" wrap="off">{{$e.Ganre}}</textarea>
+                                <h4>Description:</h4>
+                                <input type="file" name="myFile"/>
+                                <textarea class="myArea1" name="descriptionB" maxlength="2000" rows="3">{{$e.Description}}</textarea>
+                                <input type="hidden" id="BookId" name="idwka" value="{{.ID}}">
+                            </div>
+                            <button type="submit" name="say" value="" class="btn btn-primary"><i class="fa fa-reply"></i>Update</button>
+                        </form>
+                        <form  action="/delete" method="POST">
+                            <div>
+                                <br>
+                            <button type="submit" name="say" value="" class="btn btn-primary"><i class="fa fa-reply"></i>Delete</button>
+                            <input type="hidden" id="BookId" name="idwka" value="{{.ID}}">
+                            </div>
+                        </form>
+                </div>
+                {{end}}
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
